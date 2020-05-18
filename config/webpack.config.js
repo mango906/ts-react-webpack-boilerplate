@@ -1,10 +1,10 @@
 const path = require("path");
-const HTMLWebPackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname + "/build")
@@ -42,7 +42,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new HTMLWebPackPlugin({
+    new HtmlWebPackPlugin({
       template: "./public/index.html", // public/index.html 파일을 읽는다.
       filename: "inex.html" // output: index.html
     }),

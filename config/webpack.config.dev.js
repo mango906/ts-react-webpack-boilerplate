@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./src/index.tsx",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "../build")
@@ -15,8 +15,20 @@ module.exports = {
     index: "index.html",
     port: 9000
   },
+  resolve: {
+    extensions: [".wasm", ".ts", ".tsx", ".mjs", ".cjs", ".js", ".json"]
+  },
   module: {
     rules: [
+      {
+        test: /\.ts(x?)$/,
+        exclude: "/node_modules/",
+        use: [
+          {
+            loader: "ts-loader"
+          }
+        ]
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: "/node_modules",
