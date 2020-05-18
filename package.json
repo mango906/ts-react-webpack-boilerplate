@@ -1,18 +1,20 @@
 {
-  "name": "webpack_practice",
+  "name": "ts-react-webpack-boilerplate",
   "version": "1.0.0",
   "main": "index.tsx",
   "repository": "https://github.com/mango906/webpack_practice.git",
   "author": "mango906 <minkb01@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack-dev-server --config ./config/webpack.config.dev --hot",
+    "dev": "webpack-dev-server --config ./config/webpack.config.dev.ts --hot",
     "build": "webpack --config ./config/webpack.config.prod"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/node": "^14.0.1",
     "@types/react": "^16.9.35",
     "@types/react-dom": "^16.9.8",
     "babel-loader": "^8.1.0",
@@ -31,5 +33,9 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@types/clean-webpack-plugin": "^0.1.3"
   }
 }
